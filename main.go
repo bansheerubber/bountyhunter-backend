@@ -9,7 +9,7 @@ func requestHandler(context *fasthttp.RequestCtx) {
 			fmt.Fprintf(context, "hey motherfucker\n\n")
 
 		default:
-			context.Error("Unsupported path", fasthttp.StatusNotFound)
+			context.Error("404", fasthttp.StatusNotFound)
 	}
 }
 
