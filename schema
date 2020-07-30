@@ -1,0 +1,45 @@
+name: string @index(term) .
+description: string .
+
+location: string .
+locations: [string] .
+
+suspects: [uid] @reverse .
+victims: [uid] @reverse .
+
+start_date: datetime @index(year) .
+end_date: datetime @index(year) .
+
+sources: [uid] .
+
+type Case {
+	name
+	description
+	locations
+	suspects
+	victims
+	start_date
+	end_date
+	sources
+}
+
+type Person {
+	name
+	location
+	start_date
+	end_date
+}
+
+reliable: string .
+type: uid .
+link: string .
+
+type Source {
+	link
+	type
+}
+
+type SourceType {
+	name
+	reliable
+}
